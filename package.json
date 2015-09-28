@@ -1,5 +1,5 @@
 {
- "name": "nativescript-IQKeyboardManager",
+ "name": "nativescript-iqkeyboardmanager",
  "version": "1.0.0",
  "description": "NativeScript wrapper of the popular IQKeyboardManager iOS library",
  "main": "index.js",

@@ -7,7 +7,7 @@ NativeScript wrapper for the popular [IQKeyboardManager](https://cocoapods.org/p
 ## Installation
 
 ```
-$ tns plugin add nativescript-IQKeyboardManager
+$ tns plugin add nativescript-iqkeyboardmanager
 ```
 
 ## Usage
