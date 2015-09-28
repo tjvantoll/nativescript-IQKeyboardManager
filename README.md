@@ -2,7 +2,7 @@
 
 NativeScript wrapper for the popular [IQKeyboardManager](https://cocoapods.org/pods/IQKeyboardManager) iOS framework, which provides an elegant solution for preventing the iOS keyboard from covering `UITextView` controls.
 
-![](screenshot.gif)
+<img src="screenshot.gif" style="border: 2px solid #eee">
 
 ## Installation
 
