@@ -14,14 +14,14 @@ $ tns plugin add nativescript-iqkeyboardmanager
 
 Set `IQKeyboardManager.sharedManager().enable` to `true` in your first view's `loaded` event handler. For example:
 
-```
+```xml
 <!-- main-page.xml -->
 <Page loaded="loaded">
     ...
 </Page>
 ```
 
-```
+```js
 // main-page.js
 exports.loaded = function(args) {
     // Guard against errors when running on Android
