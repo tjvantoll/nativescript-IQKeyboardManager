@@ -12,24 +12,7 @@ $ tns plugin add nativescript-iqkeyboardmanager
 
 ## Usage
 
-Set `IQKeyboardManager.sharedManager().enable` to `true` in your first view's `loaded` event handler. For example:
-
-```
-<!-- main-page.xml -->
-<Page loaded="loaded">
-    ...
-</Page>
-```
-
-```
-// main-page.js
-exports.loaded = function(args) {
-    // Guard against errors when running on Android
-    if (typeof IQKeyboardManager != "undefined") {
-        IQKeyboardManager.sharedManager().enable = true;
-    }
-};
-```
+That's it! IQKeyboardManager takes care of all initialization when your app starts up by default.
 
 ## Documentation
 
