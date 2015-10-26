@@ -2,10 +2,9 @@
  "name": "nativescript-iqkeyboardmanager",
  "version": "1.0.0",
  "description": "NativeScript wrapper of the popular IQKeyboardManager iOS library",
- "main": "index.js",
  "nativescript": {
    "platforms": {
-     "ios": "1.3.0"
+     "ios": "1.4.0"
    }
   },
   "author": "TJ VanToll <tj.vantoll@gmail.com> (http://tjvantoll.com/)",
