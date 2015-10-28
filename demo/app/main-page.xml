@@ -1,0 +1,6 @@
+<page>
+	<stack-layout>
+		<text-field hint="Email" />
+		<text-field hint="Password" />
+	</stack-layout>
+</page>
