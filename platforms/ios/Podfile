@@ -1,1 +1,1 @@
-pod 'IQKeyboardManager'
+pod 'IQKeyboardManager', '~> 4.0.0'
