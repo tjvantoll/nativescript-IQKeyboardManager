@@ -7,6 +7,13 @@
      "ios": "1.4.0"
    }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjvantoll/nativescript-IQKeyboardManager.git"
+  },
+  "keywords": [
+    "NativeScript"
+  ],
   "author": "TJ VanToll <tj.vantoll@gmail.com> (http://tjvantoll.com/)",
   "license": {
     "type": "MIT"
