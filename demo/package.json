@@ -1,12 +1,12 @@
 {
-	"nativescript": {
-		"id": "org.nativescript.iqkeyboardmanagerdemo",
-		"tns-ios": {
-			"version": "1.7.0"
-		}
-	},
-	"dependencies": {
-		"nativescript-iqkeyboardmanager": "file:../../nativescript-IQKeyboardManager",
-		"tns-core-modules": "^1.7.1"
-	}
+  "nativescript": {
+    "id": "org.nativescript.iqkeyboardmanagerdemo",
+    "tns-ios": {
+      "version": "3.0.0-rc.2"
+    }
+  },
+  "dependencies": {
+    "nativescript-iqkeyboardmanager": "file:../../nativescript-IQKeyboardManager",
+    "tns-core-modules": "^3.0.0-rc.2"
+  }
 }
