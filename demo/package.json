@@ -2,11 +2,21 @@
   "nativescript": {
     "id": "org.nativescript.iqkeyboardmanagerdemo",
     "tns-ios": {
-      "version": "3.0.0-rc.2"
+      "version": "3.0.0"
     }
   },
   "dependencies": {
     "nativescript-iqkeyboardmanager": "file:../../nativescript-IQKeyboardManager",
-    "tns-core-modules": "^3.0.0-rc.2"
+    "tns-core-modules": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.12.0",
+    "babel-types": "6.11.1",
+    "babylon": "6.8.4",
+    "filewalker": "0.1.2",
+    "lazy": "1.0.11",
+    "nativescript-dev-typescript": "~0.4.5",
+    "tns-platform-declarations": "^3.0.1",
+    "typescript": "^2.3.0"
   }
 }

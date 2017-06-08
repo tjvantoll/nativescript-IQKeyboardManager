@@ -1,6 +1,27 @@
 ﻿TextField {
-	margin: 5;
+	margin: 10;
 	padding: 5;
 	border-color: black;
 	border-width: 1;
+}
+
+GridLayout {
+	padding: 10;
+}
+
+Switch {
+	horizontal-align: right;
+}
+
+Label {
+	margin: 10 0;
+}
+
+Label.title {
+	font-weight: bold;
+	text-align: center;
+}
+
+Label.disabled {
+	color: #bbb;
 }
