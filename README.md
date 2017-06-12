@@ -23,6 +23,20 @@ You can easily access [any other feature](https://github.com/hackiftekhar/IQKeyb
 
 <img src="https://github.com/tjvantoll/nativescript-IQKeyboardManager/raw/master/demo.gif" width="320px"/> 
 
+### Updating the `IQKeyboardManager.d.ts` file
+Plugin developer note: when the [IQKeyboardManager Podfile](platforms/ios/Podfile) is updated,
+you should generate new typings for it as well.
+
+Execute these commands in a Terminal window:
+
+```bash
+cd demo
+TNS_DEBUG_METADATA_PATH="$(pwd)/metadata" tns build ios
+TNS_TYPESCRIPT_DECLARATIONS_PATH="$(pwd)/typings" tns build ios
+```
+
+Then locate the generated typings file in demo/typings and override the one in the plugin sources.
+
 ## Documentation
 
 For more details on how IQKeyboardManager works, including more detailed API documentation, refer to [the library's CocoaPod page](https://cocoapods.org/pods/IQKeyboardManager).
