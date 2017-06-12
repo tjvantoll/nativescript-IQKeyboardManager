@@ -15,11 +15,17 @@ $ tns plugin add nativescript-iqkeyboardmanager
 That's it! IQKeyboardManager takes care of all initialization when your app starts up by default.
 
 ## Advanced usage
-
 Want to tweak the appearance and/or behavior?
 
-Take a look at the embedded [demo app](demo/) for a bunch of features.
-You can easily access [any other feature](https://github.com/hackiftekhar/IQKeyboardManager/blob/df3afc60ad92a2264dc5e101a3c7966d7f6265ef/PROPERTIES%20%26%20FUNCTIONS.md) because this plugin exposes the entire library through [a TypeScript definition file](demo/references.d.ts).
+As an example, to initialize an IQKeyboardManager with a dark keyboard you could use the following code.
+
+```typescript
+const iqKeyboard = IQKeyboardManager.sharedManager();
+iqKeyboard.overrideKeyboardAppearance = true;
+iqKeyboard.keyboardAppearance = UIKeyboardAppearance.Dark;
+```
+
+For more examples of what's possible, run the demo app (shown below) and check out the [app's `main-view-model.ts` file](demo/app/main-view-model.ts).
 
 <img src="https://github.com/tjvantoll/nativescript-IQKeyboardManager/raw/master/demo.gif" width="320px"/> 
 
