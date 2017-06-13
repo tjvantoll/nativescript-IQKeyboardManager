@@ -15,9 +15,28 @@ $ tns plugin add nativescript-iqkeyboardmanager
 That's it! IQKeyboardManager takes care of all initialization when your app starts up by default.
 
 ## Advanced usage
+
 Want to tweak the appearance and/or behavior?
 
-As an example, to initialize an IQKeyboardManager with a dark keyboard you could use the following code.
+Start by adding the TypeScript definition file for IQKeyboardManager into your `tsconfig.json` file. (See this repo’s demo app for a specific example.)
+
+```
+"paths": {
+    "*": [
+        "./node_modules/nativescript-iqkeyboardmanager/IQKeyboardManager.d.ts",
+        "./node_modules/tns-core-modules/*",
+        "./node_modules/*"
+    ]
+}
+```
+
+Next, initialize an instance of `IQKeyboardManager` with the following line of code.
+
+```typescript
+const iqKeyboard = IQKeyboardManager.sharedManager();
+```
+
+You now have the full IQKeyboardManager APIs available for you to use. For example you could use the following code to switch to a dark keyboard.
 
 ```typescript
 const iqKeyboard = IQKeyboardManager.sharedManager();
@@ -25,15 +44,19 @@ iqKeyboard.overrideKeyboardAppearance = true;
 iqKeyboard.keyboardAppearance = UIKeyboardAppearance.Dark;
 ```
 
-For more examples of what's possible, run the demo app (shown below) and check out the [app's `main-view-model.ts` file](demo/app/main-view-model.ts).
+For more examples of what's possible, run the demo app (shown in the gif below) and check out the [app's `main-view-model.ts` file](demo/app/main-view-model.ts).
 
 <img src="https://github.com/tjvantoll/nativescript-IQKeyboardManager/raw/master/demo.gif" width="320px"/> 
 
-### Updating the `IQKeyboardManager.d.ts` file
-Plugin developer note: when the [IQKeyboardManager Podfile](platforms/ios/Podfile) is updated,
-you should generate new typings for it as well.
+## Documentation
 
-Execute these commands in a Terminal window:
+For more details on how IQKeyboardManager works, including more detailed API documentation, refer to [the library's CocoaPod page](https://cocoapods.org/pods/IQKeyboardManager).
+
+## Maintainers
+
+For maintainer’s of this plugin’s source code: when the [IQKeyboardManager Podfile](platforms/ios/Podfile) updates, you should generate new typings for for this plugin to reflect those changes.
+
+To do so, execute these commands.
 
 ```bash
 cd demo
@@ -41,8 +64,4 @@ TNS_DEBUG_METADATA_PATH="$(pwd)/metadata" tns build ios
 TNS_TYPESCRIPT_DECLARATIONS_PATH="$(pwd)/typings" tns build ios
 ```
 
-Then locate the generated typings file in demo/typings and override the one in the plugin sources.
-
-## Documentation
-
-For more details on how IQKeyboardManager works, including more detailed API documentation, refer to [the library's CocoaPod page](https://cocoapods.org/pods/IQKeyboardManager).
+Next, locate IQKeyboardManager’s generated typings file in the `demo/typings` folder and override the `IQKeyboardManager.d.ts` file in this repo’s root.
