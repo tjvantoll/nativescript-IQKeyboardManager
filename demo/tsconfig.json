@@ -28,7 +28,6 @@
         "baseUrl": ".",
         "paths": {
             "*": [
-                "./node_modules/nativescript-iqkeyboardmanager/IQKeyboardManager.d.ts",
                 "./node_modules/tns-core-modules/*",
                 "./node_modules/*"
             ]

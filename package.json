@@ -2,6 +2,7 @@
   "name": "nativescript-iqkeyboardmanager",
   "version": "1.0.1",
   "description": "NativeScript wrapper of the popular IQKeyboardManager iOS library",
+  "typings": "index.d.ts",
   "nativescript": {
     "platforms": {
       "ios": "1.4.0"
