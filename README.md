@@ -18,17 +18,14 @@ That's it! IQKeyboardManager takes care of all initialization when your app star
 
 Want to tweak the appearance and/or behavior?
 
-Start by adding the TypeScript definition file for IQKeyboardManager into your `tsconfig.json` file. (See this repo’s demo app for a specific example.)
+Start by adding the following two paths into your app’s `references.d.ts` file. (See this repo’s demo app for a specific example.)
 
 ```
-"paths": {
-    "*": [
-        "./node_modules/nativescript-iqkeyboardmanager/IQKeyboardManager.d.ts",
-        "./node_modules/tns-core-modules/*",
-        "./node_modules/*"
-    ]
-}
+/// <reference path="./node_modules/tns-platform-declarations/ios/ios.d.ts" />
+/// <reference path="./node_modules/nativescript-iqkeyboardmanager/index.d.ts" />
 ```
+
+> **NOTE**: You might also need to `npm install --save-dev tns-platform-declarations` to bring in NativeScript’s TypeScript definitions for native iOS development.
 
 Next, initialize an instance of `IQKeyboardManager` with the following line of code.
 
