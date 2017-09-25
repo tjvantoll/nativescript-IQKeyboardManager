@@ -25,6 +25,12 @@ declare class IQBarButtonItem extends UIBarButtonItem {
 	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject>): IQBarButtonItem; // inherited from UIAppearance
 
 	static new(): IQBarButtonItem; // inherited from NSObject
+
+	invocation: NSInvocation;
+
+	readonly isSystemItem: boolean;
+
+	setTargetAction(target: any, action: string): void;
 }
 
 declare class IQKeyboardManager extends NSObject {
@@ -75,6 +81,8 @@ declare class IQKeyboardManager extends NSObject {
 
 	previousNextDisplayMode: IQPreviousNextDisplayMode;
 
+	readonly resignFirstResponderGesture: UITapGestureRecognizer;
+
 	shouldFixInteractivePopGestureRecognizer: boolean;
 
 	shouldPlayInputClicks: boolean;
@@ -83,7 +91,11 @@ declare class IQKeyboardManager extends NSObject {
 
 	shouldShowTextFieldPlaceholder: boolean;
 
+	shouldShowToolbarPlaceholder: boolean;
+
 	shouldToolbarUsesTextFieldTintColor: boolean;
+
+	toolbarBarTintColor: UIColor;
 
 	toolbarDoneBarButtonItemImage: UIImage;
 
@@ -141,15 +153,6 @@ declare class IQKeyboardReturnKeyHandler extends NSObject {
 	removeResponderFromView(view: UIView): void;
 
 	removeTextFieldView(textFieldView: UIView): void;
-}
-
-declare const enum IQLayoutGuidePosition {
-
-	None = 0,
-
-	Top = 1,
-
-	Bottom = 2
 }
 
 declare const enum IQPreviousNextDisplayMode {
@@ -219,17 +222,13 @@ declare class IQTitleBarButtonItem extends IQBarButtonItem {
 
 	static new(): IQTitleBarButtonItem; // inherited from NSObject
 
-	font: UIFont;
-
 	selectableTextColor: UIColor;
 
-	titleInvocation: NSInvocation;
+	titleFont: UIFont;
 
 	constructor(o: { title: string; });
 
 	initWithTitle(title: string): this;
-
-	setTitleTargetAction(target: any, action: string): void;
 }
 
 declare class IQToolbar extends UIToolbar implements UIInputViewAudioFeedback {
@@ -250,13 +249,13 @@ declare class IQToolbar extends UIToolbar implements UIInputViewAudioFeedback {
 
 	static new(): IQToolbar; // inherited from NSObject
 
-	doneImage: UIImage;
+	doneBarButton: IQBarButtonItem;
 
-	doneTitle: string;
+	nextBarButton: IQBarButtonItem;
 
-	title: string;
+	previousBarButton: IQBarButtonItem;
 
-	titleFont: UIFont;
+	readonly titleBarButton: IQTitleBarButtonItem;
 
 	readonly debugDescription: string; // inherited from NSObjectProtocol
 
