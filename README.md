@@ -16,7 +16,68 @@ That's it! IQKeyboardManager takes care of all initialization when your app star
 
 ## Advanced usage
 
-Want to tweak the appearance and/or behavior?
+### Grouping related textfields (previous / next buttons)
+If your UI layout has sibling text fields, then IQKeyboardManager is able to automatically
+add previous / next buttons to the accessorybar which the user can use to jump back and forth.
+See those < and > buttons in the video above.
+
+In case those fields were not direct siblings, until version 1.3.0 of this plugin, you had no way
+to force the previous / next buttons to appear. However, now you can:
+
+#### NativeScript /w XML usage
+Note that for example sake superfluous `<StackLayout>`s were added:
+
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:IQKbMgr="nativescript-iqkeyboardmanager">
+  <StackLayout>
+    <IQKbMgr:PreviousNextView><!-- add this 'wrapper' to enable those previous / next buttons -->
+      <StackLayout>
+        <StackLayout>
+          <TextField hint="Email"/>
+        </StackLayout>
+        <StackLayout>
+          <TextField hint="Password"/>
+        </StackLayout>
+      </StackLayout>
+    </IQKbMgr:PreviousNextView>
+  </Stacklayout>
+</Page>
+```
+
+#### NativeScript /w Angular usage
+In the `.modules.ts` file where you want to use this feature (or the `app.module.ts`),
+register the `PreviousNextView` element:
+
+```typescript
+import { registerElement } from "nativescript-angular";
+registerElement("PreviousNextView", () => require("nativescript-iqkeyboardmanager"). PreviousNextView);
+```
+
+Then in the view, use that element like this (again, we went nuts with the `<StackLayout>`s:
+
+```html
+<StackLayout>
+  <PreviousNextView><!-- add this 'wrapper' to enable those previous / next buttons -->
+    <StackLayout>
+      <StackLayout>
+        <TextField hint="Email"></TextField>
+      </StackLayout>
+      <StackLayout>
+        <TextField hint="Password"></TextField>
+      </StackLayout>
+    </StackLayout>
+  </PreviousNextView>
+</Stacklayout>
+```
+
+#### NativeScript /w Vue usage
+Vue usage is very similar to Angular usage, the only difference is in how the element is registered. Open your app's entry file, and add this:
+
+```javascript
+Vue.registerElement("PreviousNextView", () => require("nativescript-iqkeyboardmanager"). PreviousNextView)
+```
+
+### Tweaking the appearance and behavior
 
 Start by adding the following two paths into your app’s `references.d.ts` file. (See this repo’s demo app for a specific example.)
 
