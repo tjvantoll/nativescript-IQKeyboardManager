@@ -18,19 +18,21 @@ That's it! IQKeyboardManager takes care of all initialization when your app star
 
 ### Grouping related textfields (previous / next buttons)
 If your UI layout has sibling text fields, then IQKeyboardManager is able to automatically
-add previous / next buttons to the accessorybar which the user can use to jump back and forth.
+add previous / next buttons to the accessory bar which the user can use to jump back and forth.
 See those < and > buttons in the video above.
 
 In case those fields were not direct siblings, until version 1.3.0 of this plugin, you had no way
 to force the previous / next buttons to appear. However, now you can:
 
 #### NativeScript /w XML usage
-Note that for example sake superfluous `<StackLayout>`s were added:
+Note in the example below that the two `<TextField>` controls are not siblings (both have parent `<StackLayout>` containers). Because of this, IQKeyboardManager will not automatically provide an optimized keyboard by default.
+
+However, if you surround the controls with this plugin's `<PreviousNextView>` control, as the example below shows, you will continue to get an optimized keyboard as expected.
 
 ```xml
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:IQKbMgr="nativescript-iqkeyboardmanager">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:IQKeyboardManager="nativescript-iqkeyboardmanager">
   <StackLayout>
-    <IQKbMgr:PreviousNextView><!-- add this 'wrapper' to enable those previous / next buttons -->
+    <IQKeyboardManager:PreviousNextView><!-- add this 'wrapper' to enable those previous / next buttons -->
       <StackLayout>
         <StackLayout>
           <TextField hint="Email"/>
@@ -39,7 +41,7 @@ Note that for example sake superfluous `<StackLayout>`s were added:
           <TextField hint="Password"/>
         </StackLayout>
       </StackLayout>
-    </IQKbMgr:PreviousNextView>
+    </IQKeyboardManager:PreviousNextView>
   </Stacklayout>
 </Page>
 ```
@@ -50,7 +52,7 @@ register the `PreviousNextView` element:
 
 ```typescript
 import { registerElement } from "nativescript-angular";
-registerElement("PreviousNextView", () => require("nativescript-iqkeyboardmanager"). PreviousNextView);
+registerElement("PreviousNextView", () => require("nativescript-iqkeyboardmanager").PreviousNextView);
 ```
 
 Then in the view, use that element like this (again, we went nuts with the `<StackLayout>`s:

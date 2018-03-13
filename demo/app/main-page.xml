@@ -1,4 +1,4 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:IQKbMgr="nativescript-iqkeyboardmanager" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:IQKeyboardManager="nativescript-iqkeyboardmanager" loaded="pageLoaded">
   <ScrollView>
     <StackLayout>
 
@@ -29,7 +29,7 @@
         </GridLayout>
       </iOS>
 
-      <IQKbMgr:PreviousNextView>
+      <IQKeyboardManager:PreviousNextView>
         <StackLayout>
           <StackLayout>
             <TextField hint="Email"/>
@@ -62,7 +62,7 @@
             <TextField hint="10"/>
           </StackLayout>
         </StackLayout>
-      </IQKbMgr:PreviousNextView>
+      </IQKeyboardManager:PreviousNextView>
     </StackLayout>
   </ScrollView>
 </Page>
