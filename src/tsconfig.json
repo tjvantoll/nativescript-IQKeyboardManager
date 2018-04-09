@@ -2,16 +2,16 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "declaration": false,
+        "declaration": true,
         "removeComments": true,
         "noLib": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "lib": [
             "es6",
-            "dom",
-            "es2015.iterable"
+            "dom"
         ],
+        "sourceMap": false,
         "pretty": true,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
@@ -25,11 +25,12 @@
             "./node_modules/@types",
             "./node_modules"
         ],
-        "types": []
+        "types": [
+        ]
     },
     "exclude": [
-        "node_modules",
-        "platforms"
+        "demo",
+        "node_modules"
     ],
     "compileOnSave": false
 }

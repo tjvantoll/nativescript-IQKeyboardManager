@@ -1,0 +1,5 @@
+*.map
+*.ts
+!index.d.ts
+tsconfig.json
+package-lock.json

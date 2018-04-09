@@ -1,7 +1,9 @@
-import { Observable } from "data/observable";
+import { Observable } from "tns-core-modules/data/observable";
+import { isIOS } from "tns-core-modules/platform";
+
+declare const IQKeyboardManager: any;
 
 export class HelloWorldModel extends Observable {
-
   private iqKeyboard: IQKeyboardManager;
 
   public iqKeyboardEnabled: boolean = true;
@@ -14,7 +16,9 @@ export class HelloWorldModel extends Observable {
 
   constructor() {
     super();
-    this.iqKeyboard = IQKeyboardManager.sharedManager();
+    if (isIOS) {
+      this.iqKeyboard = IQKeyboardManager.sharedManager();
+    }
   }
 
   toggleIQKeyboard(): void {
