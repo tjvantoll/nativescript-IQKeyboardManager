@@ -108,33 +108,34 @@ For more examples of what's possible, run the demo app (shown in the gif below) 
 
 <img src="https://github.com/tjvantoll/nativescript-IQKeyboardManager/raw/master/demo.gif" width="320px"/>
 
-### Multi-factor one time code auto-fill
+### Multi-factor one-time code auto-fill
 
 While the following is not a feature specific to IQKeyboardManager, you are here because you want the best keyboard experience for your NativeScript app and this may be helpful to know about.
 
-iOS has a feature where a text field's QuickType search suggestion bar can suggest one time code values for multi-factor authentication that were texted to your device.
+iOS has a feature where a text field's QuickType search suggestion bar can suggest one-time code values for multi-factor authentication that were texted to your device.
 
-If the field is specially-identified as a one time code field, the suggestion will appear for about 3 minutes after being received and the user simply has to tap the suggestion to fill in the value. No short term memorization or copy/paste gestures required. Examples of message formats are:
+If the field is specially-identified as a one-time code field, the suggestion will appear for about 3 minutes after being received, and the user simply has to tap the suggestion to fill in the value—no short term memorization or copy/paste gestures required. Examples of message formats are:
 * 123456 is your App Name code.
 * 123456 is your App Name login code.
 * 123456 is your App Name verification code.
 
-In Angular, first declare `UITextContentTypeOneTimeCode` near your component imports:
+To implement this functionality in your own app, first declare `UITextContentTypeOneTimeCode` near your component imports:
 
 ```typescript
 declare var UITextContentTypeOneTimeCode;
 ```
 
-Then, set field's `ios.textContentType`:
+Then, set the field's `ios.textContentType` property:
 
 ```typescript
+// This code assumes this.page exists as a reference to the current Page.
 const mfaCodeField: TextField = this.page.getViewById(oneTimeCodeFieldName);
 if (mfaCodeField !== null && mfaCodeField.ios) {
   mfaCodeField.ios.textContentType = UITextContentTypeOneTimeCode;
 }
 ```
 
-There are other textContentType values too, see more in [this article](https://medium.com/developerinsider/ios12-password-autofill-automatic-strong-password-and-security-code-autofill-6e7db8da1810).
+There are other `textContentType` values you might want to use. You can read more about the property in [this article](https://medium.com/developerinsider/ios12-password-autofill-automatic-strong-password-and-security-code-autofill-6e7db8da1810).
 
 ## Documentation
 
