@@ -1,8 +1,6 @@
 import { Observable } from "tns-core-modules/data/observable";
 import { isIOS } from "tns-core-modules/platform";
 
-declare const IQKeyboardManager: any;
-
 export class HelloWorldModel extends Observable {
   private iqKeyboard: IQKeyboardManager;
 
