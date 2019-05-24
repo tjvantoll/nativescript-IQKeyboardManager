@@ -39,10 +39,10 @@
             <TextField hint="Password"/>
           </StackLayout>
           <StackLayout>
-            <TextField hint="3"/>
+            <IQKeyboardManager:TextViewWithHint hint="Working TextView hint 🤪"/>
           </StackLayout>
           <StackLayout>
-            <TextField hint="4"/>
+            <TextView hint="Not working TextView hint"/>
           </StackLayout>
           <StackLayout>
             <TextField hint="5"/>

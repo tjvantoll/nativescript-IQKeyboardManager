@@ -1,6 +1,9 @@
 declare class PreviousNextView {
 }
 
+declare class TextViewWithHint {
+}
+
 declare const enum IQAutoToolbarManageBehaviour {
 
   BySubviews = 0,
