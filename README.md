@@ -79,6 +79,51 @@ Vue usage is very similar to Angular usage, the only difference is in how the el
 Vue.registerElement("PreviousNextView", () => require("nativescript-iqkeyboardmanager"). PreviousNextView)
 ```
 
+### Adding a placeholder/hint on a `TextView`'s accessory bar
+Looking at the gif above you may notice when focusing the Email address and password fields,
+the placeholder/hint of those `TextField`s is shown in the accessory bar above the keyboard.
+
+But when you use a `TextView` instead of a `TextField`, the placeholder is not shown because
+of an iOS limitation. You can work around this limitation by using the `TextViewWithHint`
+provided by this plugin. So whenever you want to use a `TextView` with a placeholder,
+use `TextViewWithHint` instead.
+
+#### NativeScript /w XML usage
+
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:IQKeyboardManager="nativescript-iqkeyboardmanager">
+  <StackLayout>
+    <TextView hint="Not working TextView hint"/>
+    <IQKeyboardManager:TextViewWithHint hint="Working TextView hint 🤪"/>
+  </StackLayout>
+</Page>
+```
+
+#### NativeScript /w Angular usage
+In the `.modules.ts` file where you want to use this feature (or the `app.module.ts`),
+register the `TextViewWithHint` element:
+
+```typescript
+import { registerElement } from "nativescript-angular";
+registerElement("TextViewWithHint", () => require("nativescript-iqkeyboardmanager").TextViewWithHint);
+```
+
+Then in the view, use that element like this:
+
+```html
+<StackLayout>
+  <TextView hint="Not working TextView hint"></TextView>
+  <TextViewWithHint hint="Working TextView hint 🤪"></TextViewWithHint>
+</Stacklayout>
+```
+
+#### NativeScript /w Vue usage
+Vue usage is very similar to Angular usage, the only difference is in how the element is registered. Open your app's entry file, and add this:
+
+```javascript
+Vue.registerElement("TextViewWithHint", () => require("nativescript-iqkeyboardmanager").TextViewWithHint)
+```
+
 ### Tweaking the appearance and behavior
 
 Start by adding the following two paths into your app’s `references.d.ts` file. (See this repo’s demo app for a specific example.)
