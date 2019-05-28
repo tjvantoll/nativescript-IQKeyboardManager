@@ -12,11 +12,19 @@ export class HelloWorldModel extends Observable {
   public toggleDoneButtonTextChanged: boolean = false;
   public increaseKeyboardDistanceFromTextField: boolean = false;
 
+  public textViewText;
+  public textViewWithHintText;
+
   constructor() {
     super();
     if (isIOS) {
       this.iqKeyboard = IQKeyboardManager.sharedManager();
     }
+
+    setInterval(() => {
+      console.log("textViewText: " + this.textViewText);
+      console.log("textViewWithHintText: " + this.textViewWithHintText);
+    }, 2000);
   }
 
   toggleIQKeyboard(): void {
