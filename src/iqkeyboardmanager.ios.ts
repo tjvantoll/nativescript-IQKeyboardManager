@@ -10,6 +10,7 @@ export class PreviousNextView extends ContentView {
 export class TextViewWithHint extends TextView {
   createNativeView() {
     const view = IQTextView.new();
+    this.nativeView = view;
     view.placeholder = this.hint;
     return view;
   }

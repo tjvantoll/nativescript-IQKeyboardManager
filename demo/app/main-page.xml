@@ -39,10 +39,10 @@
             <TextField hint="Password"/>
           </StackLayout>
           <StackLayout>
-            <IQKeyboardManager:TextViewWithHint hint="Working TextView hint 🤪"/>
+            <IQKeyboardManager:TextViewWithHint text="{{ textViewWithHintText }}" hint="Working TextView hint 🤪"/>
           </StackLayout>
           <StackLayout>
-            <TextView hint="Not working TextView hint"/>
+            <TextView text="{{ textViewText }}" hint="Not working TextView hint"/>
           </StackLayout>
           <StackLayout>
             <TextField hint="5"/>
