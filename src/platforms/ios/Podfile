@@ -1,1 +1,2 @@
-pod 'IQKeyboardManager', '~> 6.5'
+# bumping beyond 6.2.0 (to at least 6.5) will break the next button for TextFields (not for TextViews)
+pod 'IQKeyboardManager', '~> 6.2.0'
