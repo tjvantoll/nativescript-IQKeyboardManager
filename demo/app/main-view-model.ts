@@ -21,10 +21,10 @@ export class HelloWorldModel extends Observable {
       this.iqKeyboard = IQKeyboardManager.sharedManager();
     }
 
-    setInterval(() => {
-      console.log("textViewText: " + this.textViewText);
-      console.log("textViewWithHintText: " + this.textViewWithHintText);
-    }, 2000);
+    // setInterval(() => {
+    //   console.log("textViewText: " + this.textViewText);
+    //   console.log("textViewWithHintText: " + this.textViewWithHintText);
+    // }, 2000);
   }
 
   toggleIQKeyboard(): void {

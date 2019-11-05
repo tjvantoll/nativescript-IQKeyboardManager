@@ -32,12 +32,8 @@
 
       <IQKeyboardManager:PreviousNextView>
         <StackLayout>
-          <StackLayout>
             <TextField hint="Email"/>
-          </StackLayout>
-          <StackLayout>
             <TextField hint="Password"/>
-          </StackLayout>
           <StackLayout>
             <IQKeyboardManager:TextViewWithHint text="{{ textViewWithHintText }}" hint="Working TextView hint 🤪"/>
           </StackLayout>
@@ -51,13 +47,13 @@
             <TextField hint="6"/>
           </StackLayout>
           <StackLayout>
-            <TextField hint="7"/>
+            <TextView hint="7"/>
           </StackLayout>
           <StackLayout>
-            <TextField hint="8"/>
+            <TextView hint="8"/>
           </StackLayout>
           <StackLayout>
-            <TextField hint="9"/>
+            <TextView hint="9"/>
           </StackLayout>
           <StackLayout>
             <TextField hint="10"/>
