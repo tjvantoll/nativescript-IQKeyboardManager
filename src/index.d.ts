@@ -23,11 +23,11 @@ declare class IQBarButtonItem extends UIBarButtonItem {
 
   static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): IQBarButtonItem; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject>): IQBarButtonItem; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQBarButtonItem; // inherited from UIAppearance
 
   static appearanceWhenContainedIn(ContainerClass: typeof NSObject): IQBarButtonItem; // inherited from UIAppearance
 
-  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject>): IQBarButtonItem; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQBarButtonItem; // inherited from UIAppearance
 
   static new(): IQBarButtonItem; // inherited from NSObject
 
@@ -38,6 +38,42 @@ declare class IQBarButtonItem extends UIBarButtonItem {
   setTargetAction(target: any, action: string): void;
 }
 
+declare class IQBarButtonItemConfiguration extends NSObject {
+
+  static alloc(): IQBarButtonItemConfiguration; // inherited from NSObject
+
+  static new(): IQBarButtonItemConfiguration; // inherited from NSObject
+
+  readonly action: string;
+
+  readonly barButtonSystemItem: UIBarButtonSystemItem;
+
+  readonly image: UIImage;
+
+  readonly title: string;
+
+  constructor(o: { barButtonSystemItem: UIBarButtonSystemItem; action: string; });
+
+  constructor(o: { image: UIImage; action: string; });
+
+  constructor(o: { title: string; action: string; });
+
+  initWithBarButtonSystemItemAction(barButtonSystemItem: UIBarButtonSystemItem, action: string): this;
+
+  initWithImageAction(image: UIImage, action: string): this;
+
+  initWithTitleAction(title: string, action: string): this;
+}
+
+declare const enum IQEnableMode {
+
+  Default = 0,
+
+  Enabled = 1,
+
+  Disabled = 2
+}
+
 declare class IQKeyboardManager extends NSObject {
 
   static alloc(): IQKeyboardManager; // inherited from NSObject
@@ -45,8 +81,6 @@ declare class IQKeyboardManager extends NSObject {
   static new(): IQKeyboardManager; // inherited from NSObject
 
   static sharedManager(): IQKeyboardManager;
-
-  canAdjustAdditionalSafeAreaInsets: boolean;
 
   readonly canGoNext: boolean;
 
@@ -82,21 +116,19 @@ declare class IQKeyboardManager extends NSObject {
 
   overrideKeyboardAppearance: boolean;
 
-  placeholderFont: UIFont;
+  placeholderButtonColor: UIColor;
 
-  preventShowingBottomBlankSpace: boolean;
+  placeholderColor: UIColor;
+
+  placeholderFont: UIFont;
 
   previousNextDisplayMode: IQPreviousNextDisplayMode;
 
   readonly resignFirstResponderGesture: UITapGestureRecognizer;
 
-  shouldFixInteractivePopGestureRecognizer: boolean;
-
   shouldPlayInputClicks: boolean;
 
   shouldResignOnTouchOutside: boolean;
-
-  shouldShowTextFieldPlaceholder: boolean;
 
   shouldShowToolbarPlaceholder: boolean;
 
@@ -109,6 +141,14 @@ declare class IQKeyboardManager extends NSObject {
   toolbarDoneBarButtonItemText: string;
 
   toolbarManageBehaviour: IQAutoToolbarManageBehaviour;
+
+  toolbarNextBarButtonItemImage: UIImage;
+
+  toolbarNextBarButtonItemText: string;
+
+  toolbarPreviousBarButtonItemImage: UIImage;
+
+  toolbarPreviousBarButtonItemText: string;
 
   readonly toolbarPreviousNextAllowedClasses: NSMutableSet<typeof NSObject>;
 
@@ -181,11 +221,11 @@ declare class IQPreviousNextView extends UIView {
 
   static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): IQPreviousNextView; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject>): IQPreviousNextView; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQPreviousNextView; // inherited from UIAppearance
 
   static appearanceWhenContainedIn(ContainerClass: typeof NSObject): IQPreviousNextView; // inherited from UIAppearance
 
-  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject>): IQPreviousNextView; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQPreviousNextView; // inherited from UIAppearance
 
   static new(): IQPreviousNextView; // inherited from NSObject
 }
@@ -200,15 +240,19 @@ declare class IQTextView extends UITextView {
 
   static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): IQTextView; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject>): IQTextView; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQTextView; // inherited from UIAppearance
 
   static appearanceWhenContainedIn(ContainerClass: typeof NSObject): IQTextView; // inherited from UIAppearance
 
-  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject>): IQTextView; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQTextView; // inherited from UIAppearance
 
   static new(): IQTextView; // inherited from NSObject
 
+  attributedPlaceholder: NSAttributedString;
+
   placeholder: string;
+
+  placeholderTextColor: UIColor;
 }
 
 declare class IQTitleBarButtonItem extends IQBarButtonItem {
@@ -221,15 +265,17 @@ declare class IQTitleBarButtonItem extends IQBarButtonItem {
 
   static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): IQTitleBarButtonItem; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject>): IQTitleBarButtonItem; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQTitleBarButtonItem; // inherited from UIAppearance
 
   static appearanceWhenContainedIn(ContainerClass: typeof NSObject): IQTitleBarButtonItem; // inherited from UIAppearance
 
-  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject>): IQTitleBarButtonItem; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQTitleBarButtonItem; // inherited from UIAppearance
 
   static new(): IQTitleBarButtonItem; // inherited from NSObject
 
-  selectableTextColor: UIColor;
+  selectableTitleColor: UIColor;
+
+  titleColor: UIColor;
 
   titleFont: UIFont;
 
@@ -248,15 +294,17 @@ declare class IQToolbar extends UIToolbar implements UIInputViewAudioFeedback {
 
   static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): IQToolbar; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject>): IQToolbar; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQToolbar; // inherited from UIAppearance
 
   static appearanceWhenContainedIn(ContainerClass: typeof NSObject): IQToolbar; // inherited from UIAppearance
 
-  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject>): IQToolbar; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): IQToolbar; // inherited from UIAppearance
 
   static new(): IQToolbar; // inherited from NSObject
 
   doneBarButton: IQBarButtonItem;
+
+  fixedSpaceBarButton: IQBarButtonItem;
 
   nextBarButton: IQBarButtonItem;
 
@@ -276,9 +324,11 @@ declare class IQToolbar extends UIToolbar implements UIInputViewAudioFeedback {
 
   readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
+  readonly;  // inherited from NSObjectProtocol
+
   class(): typeof NSObject;
 
-  conformsToProtocol(aProtocol: any): boolean;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
   isEqual(object: any): boolean;
 

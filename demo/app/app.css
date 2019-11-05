@@ -1,8 +1,13 @@
-﻿TextField {
+﻿TextField, TextView {
 	margin: 10;
 	padding: 5;
 	border-color: black;
 	border-width: 1;
+}
+
+TextView {
+	padding: 8;
+	font-size: 14;
 }
 
 GridLayout {
