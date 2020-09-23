@@ -1,5 +1,4 @@
-import { ContentView } from "tns-core-modules/ui/content-view";
-import { TextView } from "tns-core-modules/ui/text-view";
+import { ContentView, TextView } from "@nativescript/core";
 
 export class PreviousNextView extends ContentView {
   createNativeView() {
