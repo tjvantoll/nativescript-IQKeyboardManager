@@ -44,10 +44,9 @@
     "url": "https://github.com/tjvantoll/nativescript-IQKeyboardManager/issues"
   },
   "devDependencies": {
-    "nativescript-dev-typescript": "~0.10.0",
-    "tns-core-modules": "~6.2.0",
-    "tns-platform-declarations": "~6.2.0",
-    "typescript": "3.4.5",
+    "@nativescript/core": "~7.0.0",
+    "@nativescript/types": "~7.0.0",
+    "typescript": "~3.9.0",
     "tslint": "^5.0.0"
   }
 }
