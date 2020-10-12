@@ -37,11 +37,11 @@
     {
       "name": "Eddy Verbruggen",
       "email": "eddyverbruggen@gmail.com"
-	},
-	{
-	  "name": "Grey Patterson",
-	  "email": "greypatterson@gmail.com"
-	}
+    },
+    {
+      "name": "Grey Patterson",
+      "email": "greypatterson@gmail.com"
+    }
   ],
   "homepage": "https://github.com/tjvantoll/nativescript-IQKeyboardManager",
   "bugs": {
