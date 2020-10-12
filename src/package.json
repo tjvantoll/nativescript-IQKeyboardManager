@@ -1,6 +1,6 @@
 {
   "name": "nativescript-iqkeyboardmanager",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "NativeScript wrapper of the popular IQKeyboardManager iOS library",
   "main": "iqkeyboardmanager",
   "typings": "index.d.ts",
@@ -37,6 +37,10 @@
     {
       "name": "Eddy Verbruggen",
       "email": "eddyverbruggen@gmail.com"
+    },
+    {
+      "name": "Grey Patterson",
+      "email": "greypatterson@gmail.com"
     }
   ],
   "homepage": "https://github.com/tjvantoll/nativescript-IQKeyboardManager",
@@ -44,10 +48,9 @@
     "url": "https://github.com/tjvantoll/nativescript-IQKeyboardManager/issues"
   },
   "devDependencies": {
-    "nativescript-dev-typescript": "~0.10.0",
-    "tns-core-modules": "~6.2.0",
-    "tns-platform-declarations": "~6.2.0",
-    "typescript": "3.4.5",
+    "@nativescript/core": "~7.0.0",
+    "@nativescript/types": "~7.0.0",
+    "typescript": "~3.9.0",
     "tslint": "^5.0.0"
   }
 }
